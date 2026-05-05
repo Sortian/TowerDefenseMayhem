@@ -117,41 +117,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named game
+# Target rules for targets named game_executable
 
 # Build rule for target.
-game: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game
-.PHONY : game
+game_executable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game_executable
+.PHONY : game_executable
 
 # fast build rule for target.
-game/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
-.PHONY : game/fast
+game_executable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/build
+.PHONY : game_executable/fast
 
-source/main.o: source/main.cpp.o
-.PHONY : source/main.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-source/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/source/main.cpp.o
-.PHONY : source/main.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-source/main.i: source/main.cpp.i
-.PHONY : source/main.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-source/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/source/main.cpp.i
-.PHONY : source/main.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-source/main.s: source/main.cpp.s
-.PHONY : source/main.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-source/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/source/main.cpp.s
-.PHONY : source/main.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+source/game.o: source/game.cpp.o
+.PHONY : source/game.o
+
+# target to build an object file
+source/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/game.cpp.o
+.PHONY : source/game.cpp.o
+
+source/game.i: source/game.cpp.i
+.PHONY : source/game.i
+
+# target to preprocess a source file
+source/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/game.cpp.i
+.PHONY : source/game.cpp.i
+
+source/game.s: source/game.cpp.s
+.PHONY : source/game.s
+
+# target to generate assembly for a file
+source/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/game.cpp.s
+.PHONY : source/game.cpp.s
+
+source/grid.o: source/grid.cpp.o
+.PHONY : source/grid.o
+
+# target to build an object file
+source/grid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/grid.cpp.o
+.PHONY : source/grid.cpp.o
+
+source/grid.i: source/grid.cpp.i
+.PHONY : source/grid.i
+
+# target to preprocess a source file
+source/grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/grid.cpp.i
+.PHONY : source/grid.cpp.i
+
+source/grid.s: source/grid.cpp.s
+.PHONY : source/grid.s
+
+# target to generate assembly for a file
+source/grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/grid.cpp.s
+.PHONY : source/grid.cpp.s
 
 # Help Target
 help:
@@ -161,10 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... game"
-	@echo "... source/main.o"
-	@echo "... source/main.i"
-	@echo "... source/main.s"
+	@echo "... game_executable"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... source/game.o"
+	@echo "... source/game.i"
+	@echo "... source/game.s"
+	@echo "... source/grid.o"
+	@echo "... source/grid.i"
+	@echo "... source/grid.s"
 .PHONY : help
 
 

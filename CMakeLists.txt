@@ -5,23 +5,22 @@ project(MyGame CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# 1. Tell CMake where to look for your header (.h) files
+# Tell CMake where to look for your header (.h) files
 include_directories(header)
 
-# 2. Gather all source (.cpp) files from the 'source' folder
-file(GLOB SOURCES "source/*.cpp")
+# Explicitly list all source files
+add_executable(game_executable
+    main.cpp
+    source/game.cpp
+    source/grid.cpp
+)
 
-# 3. Create the executable using the gathered sources
-add_executable(game ${SOURCES})
-
-# 4. Find the Raylib package on your Linux system
+# Find and link Raylib
 find_package(raylib REQUIRED)
+target_link_libraries(game_executable PRIVATE raylib)
 
-# 5. Link Raylib to your executable
-target_link_libraries(game PRIVATE raylib)
-
-# 6. Copy the assets folder to the build directory so the executable can find it
-add_custom_command(TARGET game POST_BUILD
+# Copy the assets folder to the build directory
+add_custom_command(TARGET game_executable POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_SOURCE_DIR}/assets ${CMAKE_BINARY_DIR}/assets
 )

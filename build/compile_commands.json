@@ -1,8 +1,20 @@
 [
 {
   "directory": "/home/saadabdullah/Documents/C++/Tower Defense Project/build",
-  "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game.dir/source/main.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/source/main.cpp\"",
-  "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/source/main.cpp",
-  "output": "CMakeFiles/game.dir/source/main.cpp.o"
+  "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game_executable.dir/main.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/main.cpp\"",
+  "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/main.cpp",
+  "output": "CMakeFiles/game_executable.dir/main.cpp.o"
+},
+{
+  "directory": "/home/saadabdullah/Documents/C++/Tower Defense Project/build",
+  "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game_executable.dir/source/game.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/source/game.cpp\"",
+  "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/source/game.cpp",
+  "output": "CMakeFiles/game_executable.dir/source/game.cpp.o"
+},
+{
+  "directory": "/home/saadabdullah/Documents/C++/Tower Defense Project/build",
+  "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game_executable.dir/source/grid.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/source/grid.cpp\"",
+  "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/source/grid.cpp",
+  "output": "CMakeFiles/game_executable.dir/source/grid.cpp.o"
 }
 ]
