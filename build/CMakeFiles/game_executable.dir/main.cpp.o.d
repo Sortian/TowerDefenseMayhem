@@ -149,4 +149,7 @@ CMakeFiles/game_executable.dir/main.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/utilities.h
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/utilities.h \
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/enemy.h \
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/entity.h \
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/resourceManager.h

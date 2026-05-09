@@ -8,12 +8,13 @@ int main() {
     const int screenWidth = 1360;
     const int screenHeight = 760;
 
-    Game game;
+    
     
     InitWindow(screenWidth, screenHeight, "Tower Defense Mayhem");
-\
+    Game game;
+
     SetTargetFPS(60);
-    game.PrintCoordinates();
+    
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);

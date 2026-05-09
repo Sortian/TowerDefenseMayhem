@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+source/enemy.o: source/enemy.cpp.o
+.PHONY : source/enemy.o
+
+# target to build an object file
+source/enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/enemy.cpp.o
+.PHONY : source/enemy.cpp.o
+
+source/enemy.i: source/enemy.cpp.i
+.PHONY : source/enemy.i
+
+# target to preprocess a source file
+source/enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/enemy.cpp.i
+.PHONY : source/enemy.cpp.i
+
+source/enemy.s: source/enemy.cpp.s
+.PHONY : source/enemy.s
+
+# target to generate assembly for a file
+source/enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/enemy.cpp.s
+.PHONY : source/enemy.cpp.s
+
 source/game.o: source/game.cpp.o
 .PHONY : source/game.o
 
@@ -201,6 +225,30 @@ source/grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/grid.cpp.s
 .PHONY : source/grid.cpp.s
 
+source/resourceManager.o: source/resourceManager.cpp.o
+.PHONY : source/resourceManager.o
+
+# target to build an object file
+source/resourceManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/resourceManager.cpp.o
+.PHONY : source/resourceManager.cpp.o
+
+source/resourceManager.i: source/resourceManager.cpp.i
+.PHONY : source/resourceManager.i
+
+# target to preprocess a source file
+source/resourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/resourceManager.cpp.i
+.PHONY : source/resourceManager.cpp.i
+
+source/resourceManager.s: source/resourceManager.cpp.s
+.PHONY : source/resourceManager.s
+
+# target to generate assembly for a file
+source/resourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/resourceManager.cpp.s
+.PHONY : source/resourceManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +261,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... source/enemy.o"
+	@echo "... source/enemy.i"
+	@echo "... source/enemy.s"
 	@echo "... source/game.o"
 	@echo "... source/game.i"
 	@echo "... source/game.s"
 	@echo "... source/grid.o"
 	@echo "... source/grid.i"
 	@echo "... source/grid.s"
+	@echo "... source/resourceManager.o"
+	@echo "... source/resourceManager.i"
+	@echo "... source/resourceManager.s"
 .PHONY : help
 
 

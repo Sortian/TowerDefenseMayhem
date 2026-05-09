@@ -1,19 +1,20 @@
 #pragma once
-#include<iostream>
+#include <iostream>
 #include <raylib.h>
 #include "utilities.h"
-
-const int grid_size = 40;
-
 
 class Grid
 {
 private:
-    int total_width;
-    int total_height;
-    int row_size;
-    int collumn_size;
-    Vector2D grid[grid_size][grid_size];
+    static const int x_offset = 100;
+    static const int y_offset = 50;
+    static const int row_grid_count = 10;
+    static const int column_grid_count = 15;
+    static const int total_width = 1150;
+    static const int total_height = 600;
+    static const int row_size = total_height / row_grid_count;
+    static const int column_size = total_width / column_grid_count;
+    Vector2D grid[row_grid_count][column_grid_count];
 
 public:
     Grid();

@@ -114,11 +114,41 @@ CMakeFiles/game_executable.dir/source/grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/game_executable.dir/source/grid.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/saadabdullah/Documents/C++/Tower Defense Project/source/grid.cpp" -o CMakeFiles/game_executable.dir/source/grid.cpp.s
 
+CMakeFiles/game_executable.dir/source/enemy.cpp.o: CMakeFiles/game_executable.dir/flags.make
+CMakeFiles/game_executable.dir/source/enemy.cpp.o: /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/source/enemy.cpp
+CMakeFiles/game_executable.dir/source/enemy.cpp.o: CMakeFiles/game_executable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/saadabdullah/Documents/C++/Tower Defense Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game_executable.dir/source/enemy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game_executable.dir/source/enemy.cpp.o -MF CMakeFiles/game_executable.dir/source/enemy.cpp.o.d -o CMakeFiles/game_executable.dir/source/enemy.cpp.o -c "/home/saadabdullah/Documents/C++/Tower Defense Project/source/enemy.cpp"
+
+CMakeFiles/game_executable.dir/source/enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/game_executable.dir/source/enemy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/saadabdullah/Documents/C++/Tower Defense Project/source/enemy.cpp" > CMakeFiles/game_executable.dir/source/enemy.cpp.i
+
+CMakeFiles/game_executable.dir/source/enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/game_executable.dir/source/enemy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/saadabdullah/Documents/C++/Tower Defense Project/source/enemy.cpp" -o CMakeFiles/game_executable.dir/source/enemy.cpp.s
+
+CMakeFiles/game_executable.dir/source/resourceManager.cpp.o: CMakeFiles/game_executable.dir/flags.make
+CMakeFiles/game_executable.dir/source/resourceManager.cpp.o: /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/source/resourceManager.cpp
+CMakeFiles/game_executable.dir/source/resourceManager.cpp.o: CMakeFiles/game_executable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/saadabdullah/Documents/C++/Tower Defense Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game_executable.dir/source/resourceManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/game_executable.dir/source/resourceManager.cpp.o -MF CMakeFiles/game_executable.dir/source/resourceManager.cpp.o.d -o CMakeFiles/game_executable.dir/source/resourceManager.cpp.o -c "/home/saadabdullah/Documents/C++/Tower Defense Project/source/resourceManager.cpp"
+
+CMakeFiles/game_executable.dir/source/resourceManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/game_executable.dir/source/resourceManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/saadabdullah/Documents/C++/Tower Defense Project/source/resourceManager.cpp" > CMakeFiles/game_executable.dir/source/resourceManager.cpp.i
+
+CMakeFiles/game_executable.dir/source/resourceManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/game_executable.dir/source/resourceManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/saadabdullah/Documents/C++/Tower Defense Project/source/resourceManager.cpp" -o CMakeFiles/game_executable.dir/source/resourceManager.cpp.s
+
 # Object files for target game_executable
 game_executable_OBJECTS = \
 "CMakeFiles/game_executable.dir/main.cpp.o" \
 "CMakeFiles/game_executable.dir/source/game.cpp.o" \
-"CMakeFiles/game_executable.dir/source/grid.cpp.o"
+"CMakeFiles/game_executable.dir/source/grid.cpp.o" \
+"CMakeFiles/game_executable.dir/source/enemy.cpp.o" \
+"CMakeFiles/game_executable.dir/source/resourceManager.cpp.o"
 
 # External object files for target game_executable
 game_executable_EXTERNAL_OBJECTS =
@@ -126,10 +156,12 @@ game_executable_EXTERNAL_OBJECTS =
 game_executable: CMakeFiles/game_executable.dir/main.cpp.o
 game_executable: CMakeFiles/game_executable.dir/source/game.cpp.o
 game_executable: CMakeFiles/game_executable.dir/source/grid.cpp.o
+game_executable: CMakeFiles/game_executable.dir/source/enemy.cpp.o
+game_executable: CMakeFiles/game_executable.dir/source/resourceManager.cpp.o
 game_executable: CMakeFiles/game_executable.dir/build.make
 game_executable: /usr/local/lib/libraylib.so.6.0.0
 game_executable: CMakeFiles/game_executable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/saadabdullah/Documents/C++/Tower Defense Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable game_executable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/saadabdullah/Documents/C++/Tower Defense Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable game_executable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game_executable.dir/link.txt --verbose=$(VERBOSE)
 	/usr/local/bin/cmake -E copy_directory /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/assets /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/build/assets
 

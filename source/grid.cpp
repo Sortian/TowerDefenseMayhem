@@ -5,24 +5,18 @@ using namespace std;
 
 
 Grid::Grid(){
-    total_width = 1360;
-    total_height = 760;
-
-    row_size = total_width / grid_size;
-    collumn_size = total_height / grid_size;
-
-    for(int i = 0; i < grid_size; i++)
-        for(int j = 0; j < grid_size; j++)
-            grid[i][j] = Vector2D(i*row_size,j*collumn_size);
-    
+   
+    for(int i = 0; i < row_grid_count; i++)
+        for(int j = 0; j < column_grid_count; j++)
+            grid[i][j] = Vector2D(j * column_size + x_offset,i * row_size + y_offset);
 
 }
 
 void Grid::drawGrid(){
 
-    for(int i = 0; i < grid_size; i++){
-        for(int j = 0; j < grid_size; j++){
-            DrawRectangleLines(grid[i][j].x, grid[i][j].y, row_size, collumn_size, RED);
+    for(int i = 0; i < row_grid_count; i++){
+        for(int j = 0; j < column_grid_count; j++){
+            DrawRectangleLines(grid[i][j].x, grid[i][j].y, column_size, row_size, RED);
         }
     }    
 
