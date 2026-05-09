@@ -14,6 +14,7 @@ private:
 
     int playerHealth;
     int playerGold;
+    int WaveNumber;
 
     float spawnTimer;
     float spawnInterval;

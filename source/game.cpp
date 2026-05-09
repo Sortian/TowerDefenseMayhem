@@ -9,6 +9,7 @@ Game::Game()
     spawnInterval = 1.0f;
     currentEnemyIndex = 0;
 
+    WaveNumber = 1;
     playerHealth = 50;
     playerGold = 500;
 
@@ -19,7 +20,6 @@ Game::Game()
 
     // Background
     bg = rb.getResource("bg_1");
-
 
 
     StartWave1();
@@ -42,7 +42,7 @@ void Game::StartWave1()
 
     enemies = new Enemy *[enemyCount];
 
-    enemies[0] = new Enemy();
+    enemies[0] = new BasicEnemy();
     enemies[1] = new FastEnemy();
     enemies[2] = new TankEnemy();
     enemies[3] = new FlyEnemy();
@@ -76,7 +76,7 @@ void Game::Update()
             continue;
 
         // enemies reach the end of the screen
-        if (enemies[i]->getPos().x > 1200)
+        if (enemies[i]->getPos().x > 1250)
         {
             int damage = enemies[i]->getDamage();
             TakeDamage(damage);
@@ -98,6 +98,7 @@ void Game::Draw()
     DrawTexture(bg, 0, 0, WHITE);
     DrawText(TextFormat("HEALTH: %i", playerHealth), 20, 20, 30, RED);
     DrawText(TextFormat("GOLD: %i", playerGold), 220, 20, 30, GOLD);
+    DrawText(TextFormat("Wave: %i", WaveNumber), 400, 20, 30, BLUE);
 
     grid.drawGrid();
     for (int i = 0; i < enemyCount; i++)

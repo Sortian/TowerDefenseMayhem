@@ -3,7 +3,7 @@
 
 
 
-void Enemy::draw(ResourceManager &rb)
+void BasicEnemy::draw(ResourceManager &rb)
 {
     Texture2D texture = rb.getResource("enemy_1");
     Vector2 position = {getPos().x, getPos().y};
@@ -11,7 +11,7 @@ void Enemy::draw(ResourceManager &rb)
     DrawTextureEx(texture, position, 0.0f, 0.3f, WHITE);
 }
 
-void Enemy::update()
+void BasicEnemy::update()
 {
 
     Vector2D pos = getPos();
