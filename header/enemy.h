@@ -3,6 +3,7 @@
 
 class ResourceManager;
 
+
 class Enemy : public Entity
 {
 private:

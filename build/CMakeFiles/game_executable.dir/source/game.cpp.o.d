@@ -152,4 +152,6 @@ CMakeFiles/game_executable.dir/source/game.cpp.o: \
  /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/utilities.h \
  /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/enemy.h \
  /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/entity.h \
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/tower.h \
+ /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/button.h \
  /home/saadabdullah/Documents/C++/Tower\ Defense\ Project/header/resourceManager.h
