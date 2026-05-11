@@ -23,6 +23,10 @@ Game::Game()
     buttonCount = 4;
     LoadUI();
 
+    towerCount = 0;
+    towers = nullptr;
+    currentTower = "null";
+
     StartWave1();
 }
 
@@ -34,6 +38,17 @@ Game::~Game()
         delete enemies[i];
     }
     delete[] enemies;
+
+    if (towers != nullptr)
+    {
+        for (int i = 0; i < towerCount; i++)
+        {
+            delete towers[i];
+        }
+        delete[] towers;
+
+        towers = nullptr;
+    }
 
     delete[] towerUI;
 }
@@ -104,6 +119,23 @@ void Game::Update()
             TowerUIstate = 1;
         }
     }
+
+    // GridCheck
+    if (TowerUIstate == 1)
+    {
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            Vector2D mbPos = GetMousePosition();
+
+            if (CheckGridClick(mbPos.x, mbPos.y))
+            {
+                resetUIbuttons();
+                TowerUIstate = 0;
+
+                PlaceTower(currentTower, mbPos.x, mbPos.y);
+            }
+        }
+    }
 }
 
 void Game::DrawButtonLabel(const Button &btn)
@@ -125,9 +157,6 @@ void Game::DrawButtonLabel(const Button &btn)
 void Game::Draw()
 {
 
-    BeginDrawing();
-    ClearBackground(RAYWHITE);
-
     DrawTexture(bg, 0, 0, WHITE);
 
     DrawText(TextFormat("HEALTH: %i", playerHealth), 20, 10, 30, RED);
@@ -142,16 +171,26 @@ void Game::Draw()
             enemies[i]->draw(rb);
     }
 
+    for (int i = 0; i < towerCount; i++)
+    {
+        if (towers[i] != nullptr)
+            towers[i]->draw(rb);
+    }
+
     for (int i = 0; i < buttonCount; i++)
     {
 
-        Color col = towerUI[i].isClicked ? GOLD : (towerUI[i].isHovered ? LIGHTGRAY : GRAY);
+        Color col = GRAY;
+
+        if (towerUI[i].isClicked)
+            col = GOLD;
+        else if (towerUI[i].isHovered)
+            col = LIGHTGRAY;
+
         DrawRectangleRec(towerUI[i].rect, col);
         DrawButtonLabel(towerUI[i]);
     }
     DrawStatusText();
-
-    EndDrawing();
 }
 
 void Game::PrintCoordinates()
@@ -189,12 +228,28 @@ void Game::LoadUI()
     }
 }
 
+void Game::setCurrentTower(string clickedButtonLabel)
+{
+
+    if (clickedButtonLabel == "Cannon $100")
+        currentTower = "cannon";
+    else if (clickedButtonLabel == "Sniper $200")
+        currentTower = "sniper";
+    else if (clickedButtonLabel == "Machine $500")
+        currentTower = "machine";
+    else if (clickedButtonLabel == "Slow $600")
+        currentTower = "slow";
+    else
+        currentTower = "error";
+}
+
 bool Game::CheckUIClick(Button &btn)
 {
 
     if (CheckCollisionPointRec(GetMousePosition(), btn.rect))
     {
         btn.isHovered = true;
+
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             for (int i = 0; i < buttonCount; i++)
@@ -205,12 +260,31 @@ bool Game::CheckUIClick(Button &btn)
             }
 
             btn.isClicked = true;
+
+            setCurrentTower(btn.label);
+
             return true;
         }
-        else
-            btn.isHovered = false;
+    }
+    else
+    {
+        btn.isHovered = false;
     }
     return false;
+}
+
+bool Game::CheckGridClick(float x, float y)
+{
+    bool valid = false;
+    Vector2D mbPos = {x, y};
+
+    if (CheckCollisionPointRec(mbPos, grid.getgridRect()))
+    {
+        Vector2D cell = grid.returnCell(mbPos.x, mbPos.y);
+
+        valid = true;
+    }
+    return valid;
 }
 
 void Game::DrawStatusText()
@@ -226,5 +300,71 @@ void Game::DrawStatusText()
         statusText = "Place the tower in a valid tile.";
     }
 
-    DrawText(statusText.c_str(),10,650,40,WHITE);
+    DrawText(statusText.c_str(), 10, 650, 40, WHITE);
+}
+
+void Game::resetUIbuttons()
+{
+
+    for (int i = 0; i < buttonCount; i++)
+    {
+        towerUI[i].isClicked = false;
+    }
+}
+
+void Game::increaseTowerCapacity()
+{
+    Tower **newArr = new Tower *[towerCount + 1];
+    if (towers != nullptr)
+    {
+        for (int i = 0; i < towerCount; i++)
+            newArr[i] = towers[i];
+    }
+
+    towerCount++;
+
+    delete[] towers;
+
+    towers = newArr;
+}
+
+void Game::PlaceTower(string tower, float x, float y)
+{
+    cout << "place tower x: " << x << "y: " << y << endl;
+
+    cout << "placeTower called" << endl;
+    increaseTowerCapacity();
+
+    Vector2D cellCount = grid.returnCell(x,y);
+
+    cout << "cell count x: " << cellCount.x << "  " << cellCount.y << endl;
+
+    Vector2D gridCords = grid.getCordinates((int)cellCount.x, (int)cellCount.y);
+
+    cout << "gridCords x: " << gridCords.x << "  " << gridCords.y << endl;
+
+    int towerIndex = towerCount - 1;
+
+    if (tower == "cannon")
+    {
+        towers[towerIndex] = new CannonTower();
+    }
+    else if (tower == "sniper")
+    {
+        towers[towerIndex] = new SniperTower();
+    }
+    else if (tower == "machine")
+    {
+        towers[towerIndex] = new MachineGunTower();
+    }
+    else if (tower == "slow")
+    {
+        towers[towerIndex] = new SlowTower();
+    }
+    else
+    {
+        cout << "error in place tower" << endl;
+    }
+
+    towers[towerIndex]->setPos(gridCords);
 }

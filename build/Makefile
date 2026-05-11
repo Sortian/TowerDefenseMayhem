@@ -249,6 +249,30 @@ source/resourceManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/resourceManager.cpp.s
 .PHONY : source/resourceManager.cpp.s
 
+source/tower.o: source/tower.cpp.o
+.PHONY : source/tower.o
+
+# target to build an object file
+source/tower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/tower.cpp.o
+.PHONY : source/tower.cpp.o
+
+source/tower.i: source/tower.cpp.i
+.PHONY : source/tower.i
+
+# target to preprocess a source file
+source/tower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/tower.cpp.i
+.PHONY : source/tower.cpp.i
+
+source/tower.s: source/tower.cpp.s
+.PHONY : source/tower.s
+
+# target to generate assembly for a file
+source/tower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_executable.dir/build.make CMakeFiles/game_executable.dir/source/tower.cpp.s
+.PHONY : source/tower.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... source/resourceManager.o"
 	@echo "... source/resourceManager.i"
 	@echo "... source/resourceManager.s"
+	@echo "... source/tower.o"
+	@echo "... source/tower.i"
+	@echo "... source/tower.s"
 .PHONY : help
 
 

@@ -28,5 +28,11 @@
   "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game_executable.dir/source/resourceManager.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/source/resourceManager.cpp\"",
   "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/source/resourceManager.cpp",
   "output": "CMakeFiles/game_executable.dir/source/resourceManager.cpp.o"
+},
+{
+  "directory": "/home/saadabdullah/Documents/C++/Tower Defense Project/build",
+  "command": "/usr/bin/c++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -DUSE_LIBTYPE_SHARED -I\"/home/saadabdullah/Documents/C++/Tower Defense Project/header\" -g -std=gnu++17 -o CMakeFiles/game_executable.dir/source/tower.cpp.o -c \"/home/saadabdullah/Documents/C++/Tower Defense Project/source/tower.cpp\"",
+  "file": "/home/saadabdullah/Documents/C++/Tower Defense Project/source/tower.cpp",
+  "output": "CMakeFiles/game_executable.dir/source/tower.cpp.o"
 }
 ]

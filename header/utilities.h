@@ -16,6 +16,7 @@ public:
     Vector2D(int a, int b) : x((float)a), y((float)b){}
 
     Vector2D(const Vector2D& other) : x(other.x), y(other.y){}
+
     Vector2D operator=(const Vector2D& other) {
         if (this != &other) {
             x = other.x;
@@ -23,6 +24,16 @@ public:
         }
         return *this;
     }
+
+    Vector2D(Vector2 other){
+        this->x = other.x;
+        this->y = other.y;
+    }
+
+    operator Vector2() const {
+        return { x, y };
+    }
+   
 
     Vector2D& operator=(Vector2D&& other){
         x = other.x;

@@ -15,6 +15,7 @@ add_executable(game_executable
     source/grid.cpp
     source/enemy.cpp
     source/resourceManager.cpp
+    source/tower.cpp
 )
 
 # Find and link Raylib

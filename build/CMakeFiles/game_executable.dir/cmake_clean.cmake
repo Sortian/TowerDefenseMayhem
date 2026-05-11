@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/game_executable.dir/source/grid.cpp.o.d"
   "CMakeFiles/game_executable.dir/source/resourceManager.cpp.o"
   "CMakeFiles/game_executable.dir/source/resourceManager.cpp.o.d"
+  "CMakeFiles/game_executable.dir/source/tower.cpp.o"
+  "CMakeFiles/game_executable.dir/source/tower.cpp.o.d"
   "game_executable"
   "game_executable.pdb"
 )

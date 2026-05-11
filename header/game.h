@@ -33,6 +33,8 @@ private:
     int buttonCount;
     bool checkValidCost;
 
+    string currentTower;
+
 
 public:
     Game();
@@ -48,7 +50,14 @@ public:
     void LoadUI();
 
     bool CheckUIClick(Button &btn);
-    bool CheckGridClick();
+    bool CheckGridClick(float x, float y);
+
+    void resetUIbuttons();
+    Vector2D DetermineClickCell();
+
+    void setCurrentTower(string clickedButtonLabel);
+    void increaseTowerCapacity();
+    void PlaceTower(string tower, float x, float y);
 
     void StartWave1();
     
